@@ -1,0 +1,78 @@
+/* Reset & Font */
+body, html { margin:0; padding:0; font-family:'Poppins',sans-serif; background:#fff0f5; color:#333; }
+.container { width:90%; max-width:1400px; margin:0 auto; padding:0 20px; }
+
+/* Header */
+header { 
+  background:#ffc0cb; 
+  padding:25px 0; 
+  position:sticky; 
+  top:0; 
+  z-index:100; 
+  text-align:center; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+header.scrolled { 
+  background:#ffb6c1; 
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
+}
+.logo { font-size:2.8rem; color:#800000; margin:0; }
+.nav-links { list-style:none; display:flex; justify-content:center; gap:30px; padding:0; margin-top:15px; flex-wrap:wrap; }
+.nav-links li a { text-decoration:none; color:#800000; font-weight:600; font-size:1.2rem; position:relative; transition:0.3s; }
+.nav-links li a::after { content:''; position:absolute; width:0; height:2px; background:#ff1493; left:0; bottom:-5px; transition:0.3s; }
+.nav-links li a:hover::after { width:100%; }
+.nav-links li a.active { color:#ff1493; font-weight:700; }
+.nav-links li a.active::after { width:100%; background:#ff1493; }
+
+/* Hero */
+.hero { width:100%; min-height:90vh; display:flex; justify-content:center; align-items:center; text-align:center; background-size:cover; background-position:center; }
+.hero-content { background:linear-gradient(135deg, rgba(255,192,203,0.6), rgba(255,182,193,0.5)); padding:60px; border-radius:15px; max-width:800px; }
+.hero h1 { font-size:4rem; color:#800000; margin:0; }
+.hero p { font-size:1.5rem; margin:20px 0 30px; }
+.btn { display:inline-block; background:#ffb6c1; color:#800000; padding:15px 30px; border-radius:10px; text-decoration:none; font-weight:600; transition:0.4s ease-in-out; }
+.btn:hover { background:#ff69b4; transform:translateY(-3px) scale(1.05); box-shadow:0 8px 15px rgba(0,0,0,0.2); }
+
+/* Projects */
+.projects { display:flex; flex-direction:column; align-items:center; }
+.projects h2 { text-align:center; font-size:3rem; margin-bottom:50px; color:#800000; }
+.project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:40px; justify-content:center; margin:0 auto 80px; }
+.project { position:relative; border-radius:15px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.15); transition:transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+.project img { width:100%; display:block; transition:transform 0.3s, filter 0.3s; border-radius:15px; }
+.project-info { position:absolute; bottom:0; left:0; width:100%; background:linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.2)); padding:15px; color:#fff; border-radius:0 0 15px 15px; text-align:center; }
+.project-info h3 { margin:0; font-size:1.5rem; font-weight:700; }
+.project-info p { margin:5px 0 0; font-size:1rem; }
+.project:hover { transform:scale(1.05); box-shadow:0 12px 30px rgba(0,0,0,0.3); }
+.project:hover img { transform:scale(1.08); filter:brightness(0.9); }
+
+/* About & Contact */
+.about-contact { display:flex; flex-direction:column; align-items:center; text-align:center; }
+.about-contact-grid { display:flex; gap:50px; justify-content:center; flex-wrap:wrap; margin-bottom:80px; }
+.about, .contact-form { background:#ffe4e1; padding:50px; border-radius:15px; flex:1 1 400px; box-shadow:0 8px 20px rgba(0,0,0,0.15); transition:transform 0.3s; }
+.about:hover, .contact-form:hover { transform:translateY(-5px); }
+.about h2, .contact-form h2 { font-size:2.5rem; margin-bottom:20px; color:#800000; }
+.about p, .contact-form p { font-size:1.1rem; line-height:1.6; }
+.about img { margin-top:20px; border-radius:15px; width:100%; height:auto; }
+
+/* Footer */
+footer { background:#ffc0cb; text-align:center; padding:40px 0; color:#800000; font-weight:600; font-size:1.1rem; }
+
+/* Fade-in animation */
+.fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in.show { opacity:1; transform:translateY(0); }
+
+/* Smooth scroll */
+html { scroll-behavior:smooth; }
+
+/* Responsive */
+@media(max-width:1024px) {
+  .hero h1 { font-size:3.5rem; }
+  .hero p { font-size:1.3rem; }
+  .projects h2 { font-size:2.5rem; }
+}
+@media(max-width:768px) {
+  .hero h1 { font-size:3rem; }
+  .hero p { font-size:1.2rem; }
+  .nav-links { flex-direction:column; gap:15px; }
+  .about-contact-grid { flex-direction:column; }
+}
